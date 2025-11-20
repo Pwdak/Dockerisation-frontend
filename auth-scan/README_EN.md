@@ -3,7 +3,7 @@
 
 # 🇬🇧 **README_EN.md — English Version**
 
-```md
+
 # Docker Image Usage Guide – auth-scan
 
 This document explains how to use the Docker image provided as:
