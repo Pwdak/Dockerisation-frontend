@@ -1,6 +1,3 @@
-
----
-
 # Guide d’utilisation de l’image Docker – auth-scan
 
 ```md
@@ -11,7 +8,6 @@ auth-scan.tar
 
 Aucune connaissance préalable de Docker n’est requise.
 
----
 
 ## 🟦 1. Installer Docker
 
