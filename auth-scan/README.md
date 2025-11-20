@@ -1,6 +1,5 @@
 # Guide d’utilisation de l’image Docker – auth-scan
 
-```md
 Ce document explique comment utiliser l’image Docker fournie sous forme de fichier :
 
 auth-scan.tar
