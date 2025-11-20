@@ -1,8 +1,8 @@
-# Guide d’utilisation de l’image Docker – auth-scan
+# Guide d’utilisation de l’image Docker – my-frontend
 
 Ce document explique comment utiliser l’image Docker fournie sous forme de fichier :
 
-auth-scan.tar
+my-frontend.tar
 
 
 Aucune connaissance préalable de Docker n’est requise.
@@ -22,15 +22,15 @@ docker --version
 
 🟩 2. Importer l’image Docker (.tar)
 
-Placez le fichier auth-scan.tar dans un dossier puis exécutez :
+Placez le fichier my-frontend.tar dans un dossier puis exécutez :
 
 ```
-docker load -i auth-scan.tar
+docker load -i my-frontend.tar
 ```
 
 Résultat attendu :
 
-Loaded image: auth-scan:v1
+Loaded image: my-frontend:v1
 
 
 L’image est maintenant disponible sur votre machine.
@@ -46,7 +46,7 @@ Vous devez voir :
 
 ```
 REPOSITORY     TAG   IMAGE ID     SIZE
-auth-scan      v1    *******      ***
+my-frontend      v1    *******      ***
 ``` 
 
 
@@ -56,7 +56,7 @@ Vous pouvez choisir n’importe quel port local.
 Exemple ici avec le port 8080, mais vous pouvez le changer.
 
 ```
-docker run -d -p 8080:80 --name auth-scan-container auth-scan:v1
+docker run -d -p 8080:80 --name my-frontend-container my-frontend:v1
 ```
 
 Ensuite, ouvrez :
@@ -74,9 +74,9 @@ Créez un fichier docker-compose.yml :
 
 ---
 services:
-  auth-scan:
-    image: auth-scan:v1
-    container_name: auth-scan-container
+  my-frontend:
+    image: my-frontend:v1
+    container_name: my-frontend-container
     ports:
       - "8080:80"    # Modifier 8080 selon votre choix
     restart: unless-stopped
@@ -99,15 +99,15 @@ docker compose ps
 Pousser l'image sur ton régistre local :
 
 ```bash
-docker tag mon-frontend registry-url/auth-scan/auth-scan:v1
-docker push registry-url/auth-scan/auth-scan:v1
+docker tag mon-frontend registry-url/my-frontend/my-frontend:v1
+docker push registry-url/my-frontend/my-frontend:v1
 ```
 
 Ensuite puller l'image et lancer ton conteneur sur le serveur :
 
 ```bash
-docker pull registry-url/auth-scan/auth-scan:v1
-docker run -d -p 80:80 registry-url/auth-scan/auth-scan:v1
+docker pull registry-url/my-frontend/my-frontend:v1
+docker run -d -p 80:80 registry-url/my-frontend/my-frontend:v1
 ```
 
 🟥 7. Arrêter l’application
@@ -115,7 +115,7 @@ docker run -d -p 80:80 registry-url/auth-scan/auth-scan:v1
 Avec Docker :
 
 ```
-docker stop auth-scan-container
+docker stop my-frontend-container
 ```
 
 Avec Docker Compose :
@@ -127,11 +127,11 @@ docker compose down
 ⛔ 8. Supprimer le conteneur (optionnel)
 
 ```
-docker rm auth-scan-container
+docker rm my-frontend-container
 ```
 
 ♻️ 9. Supprimer l’image Docker (optionnel)
 
 ```
-docker rmi auth-scan:v1
+docker rmi my-frontend:v1
 ```
