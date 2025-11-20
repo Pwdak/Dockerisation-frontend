@@ -75,7 +75,7 @@ http://VM_IP_Address:8080
 
 Create a file named docker-compose.yml:
 
----
+
 services:
   auth-scan:
     image: auth-scan:v1
