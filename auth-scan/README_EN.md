@@ -75,7 +75,7 @@ http://VM_IP_Address:8080
 
 Create a file named docker-compose.yml:
 
-
+```
 services:
   auth-scan:
     image: auth-scan:v1
@@ -83,7 +83,7 @@ services:
     ports:
       - "8080:80"    # Change 8080 to your preferred local port
     restart: unless-stopped
-
+```
 
 Run:
 
